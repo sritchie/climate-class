@@ -27,7 +27,8 @@
 
 (defn pail-getTarget [this ^DataChunk d]
   (let [location   (.getPixelLocation d)
-        tilestring (hv->tilestring (.getTileH location) (.getTileV location))
+        tilestring (hv->tilestring (.getTileH location)
+                                   (.getTileV location))
         res (format "%s-%s"
                     (.getResolution location)
                     (.getTemporalRes d))]
@@ -56,7 +57,7 @@
 
 (defn pail-structure []
   (climate.pail.DataChunkPailStructure.))
-
+ 
 (defn data-chunk-tap [path & colls]
   (pail-tap path colls (pail-structure)))
 

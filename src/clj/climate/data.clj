@@ -29,7 +29,7 @@
           (src ?name ?fire)
           (combine-fires ?fire :> ?output))))
 
-;; Show another way w/ predicate macros.
+;; Show another way w/ predicate
 
 (defprotocol IMakeData
   (mk-data-value [x]))
@@ -67,7 +67,7 @@
   (??- (hfs-lzo-thrift "/tmp/lzothrift" DataChunk)))
 
 (defn pail-append [item]
-  (?pail- (data-chunk-tap "/tmp/chunks")
+  (?pail- (data-chunk-tap "/tmp/example")
           [[item]]))
 
 ;; You can append data to the pail!
@@ -80,7 +80,7 @@
           test-src))
 
 (defn pull-from-pail [& colls]
-  (let [src (apply data-chunk-tap "/tmp/chunks" colls)]
+  (let [src (apply data-chunk-tap "/tmp/example" colls)]
     (??<- [?path ?chunk]
           (src ?path ?chunk)
           (:distinct false))))

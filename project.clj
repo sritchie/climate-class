@@ -1,5 +1,7 @@
 (defproject climate-clj "1.0.0"
   :description "Project for the Climate Corporation's Cascalog Course."
+  :repositories {"conjars" "http://conjars.org/repo/"}
+  :exclusions [backtype/thriftjava]
   :source-path "src/clj"
   :java-source-path "src/jvm"
   :dev-resources-path "dev"

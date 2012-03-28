@@ -38,7 +38,7 @@
 (defn distribution-workflow []
   (workflow ["/tmp/checkpoint"]
             wordcounts ([:tmp-dirs wordcount-path]
-                          (prn "Starting step 1!")
+                          (prn "Starting step")
                           (?<- (hfs-seqfile wordcount-path)
                                [?word ?count]
                                (sentence ?sentence)
